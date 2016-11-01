@@ -13,7 +13,7 @@ class SortTest(unittest.TestCase):
         self.li = [0, 3, 8, 1, 5,2,4]
 
     def test_sort1(self):
-        self.assertEqual([0,1,2,3,4,5,8], self.li)
+        self.assertEqual([0,1,2,3,4,5,8], sort(self.li))
 
     def test_sort2(self):
         pass  # implement
