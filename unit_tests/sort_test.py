@@ -10,9 +10,10 @@ class SortTest(unittest.TestCase):
 
     def setUp(self):
         print 'setUp is executed before each test method'
+        self.li = [0, 3, 8, 1, 5,2,4]
 
     def test_sort1(self):
-        pass  # implement
+        self.assertEqual([0,1,2,3,4,5,8], self.li)
 
     def test_sort2(self):
         pass  # implement
@@ -28,3 +29,5 @@ class SortTest(unittest.TestCase):
         print 'tearDownClass is executed once only, after all other methods'
 
 
+if __name__ == '__main__':
+    unittest.main()
