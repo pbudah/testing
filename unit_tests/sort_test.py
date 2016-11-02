@@ -22,6 +22,10 @@ class SortTest(unittest.TestCase):
     def test_sort3(self):
         self.assertIsNotNone(sort(self.li))
 
+    def test_sort4(self):
+        self.li3 = [-6, 6, 0, -5, 8, -99]
+        self.assertEqual([-99, -6, -5, 0, 6, 8], sort(self.li3))
+
     def tearDown(self):
         print 'tearDown is executed after each test method'
 
