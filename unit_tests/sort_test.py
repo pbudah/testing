@@ -13,16 +13,16 @@ class SortTest(unittest.TestCase):
         self.li = [0, 3, 8, 1, 5,2,4]
         self.li2 = [0,1,2,3,4,5,8]
 
-    def test_sort1(self):
+    def test_sort1(self):                                # Check sort method with order of elements
         self.assertEqual([0,1,2,3,4,5,8], sort(self.li))
 
-    def test_sort2(self):
+    def test_sort2(self):                                # Check sort method with already sorted list
         self.assertEqual(self.li2, sort(self.li2))
 
-    def test_sort3(self):
+    def test_sort3(self):                                # Check that sort method is not None
         self.assertIsNotNone(sort(self.li))
 
-    def test_sort4(self):
+    def test_sort4(self):                                # Check sort method with negative values
         self.li3 = [-6, 6, 0, -5, 8, -99]
         self.assertEqual([-99, -6, -5, 0, 6, 8], sort(self.li3))
 
