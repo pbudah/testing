@@ -20,7 +20,7 @@ class SortTest(unittest.TestCase):
         self.assertEqual(self.li2, sort(self.li2))
 
     def test_sort3(self):
-        pass  # implement
+        self.assertIsNotNone(sort(self.li))
 
     def tearDown(self):
         print 'tearDown is executed after each test method'
