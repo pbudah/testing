@@ -3,10 +3,11 @@ from sample_app.sample_app import *
 
 class IntersectTest(unittest.TestCase):
 
-    def setUp(self):
-        self.a = [1,0,-1,8,"hello"]
-        self.b = [0,8,None]
-        self.result = [0,8]
+    @classmethod
+    def setUpClass(cls):
+        cls.a = [1,0,-1,8,"hello"]
+        cls.b = [0,8,None]
+        cls.result = [0,8]
 
     def test_inter1(self):
         self.assertEqual(self.result, intersect(self.a, self.b))
