@@ -10,16 +10,20 @@ class IntersectTest(unittest.TestCase):
         cls.result = [0,8]
 
     def test_inter1(self):
-        self.assertEqual(self.result, intersect(self.a, self.b))
+        res = intersect(self.a,self.b)
+        self.assertEqual(self.result, res)
 
     def test_inter2(self):
         self.assertNotIn(self.result, self.a)
         self.assertNotIn(self.result, self.b)
 
     def test_inter3(self):
-        self.assertEqual([], intersect(self.a, []))
-        self.assertEqual([], intersect([],[]))
-        self.assertEqual([], intersect([],self.b))
+        res1 = intersect(self.a, [])
+        res2 = intersect([],[])
+        res3 = intersect([],self.b)
+        self.assertEqual([], res1)
+        self.assertEqual([], res2)
+        self.assertEqual([], res3)
 
     def tearDown(self):
         print 'tearDown is executed after each test method'
