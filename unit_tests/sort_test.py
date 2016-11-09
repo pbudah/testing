@@ -19,8 +19,9 @@ class SortTest(unittest.TestCase):
     def test_sort2(self):                                # Check sort method with already sorted list
         self.assertEqual(self.li2, sort(self.li2))
 
-    def test_sort3(self):                                # Check that sort method is not None
-        self.assertIsNotNone(sort(self.li))
+    def test_sort3(self):                                # Check sort method with empty list
+        res = sort([])
+        self.assertEqual([],res, 'incorrect sort for an empty list')
 
     def test_sort4(self):                                # Check sort method with negative values
         self.li3 = [-6, 6, 0, -5, 8, -99]
