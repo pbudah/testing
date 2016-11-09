@@ -27,6 +27,10 @@ class SortTest(unittest.TestCase):
         self.li3 = [-6, 6, 0, -5, 8, -99]
         self.assertEqual([-99, -6, -5, 0, 6, 8], sort(self.li3))
 
+    def test_sort5(self):
+        li4 = sort([1])
+        self.assertEqual([1], li4, 'incorrect sort for a one element list')
+
     def tearDown(self):
         print 'tearDown is executed after each test method'
 
