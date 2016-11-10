@@ -1,23 +1,23 @@
-import unittest
-from sample_app.sample_app import *
+import unittest, requests
+#from sample_app.sample_app import *
 
 class AddProjectTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        resp = request_get()
-        cls.resp_json = resp.json()
+        print 'setUpClass is executed once only, before all other methods'
 
-        def setUp(self):
-            payload = {'name': 'Example', 'key': 'HEX'}
-            auth = ('restadmin', 'restadmin')
-            self.prst = requests.post('http://13.92.28.188:8090/rest/api/2/project',params=payload, auth=auth)
+    def setUp(self):
+        payload = {'name': 'Example', 'key': 'HEX'}
+        auth = ('restadmin', 'restadmin')
+        self.prst = requests.post('http://13.92.28.188:8090/rest/api/2/project',params=payload, auth=auth)
 
-        def test_creat(self):
-            r = self.prst.status_code
+    def test_create(self):
+        r = self.prst.status_code
+        self.assertTrue(r == requests.codes.ok, 'request is not valid and the project could not be created')
 
-            self.assertTrue(r == requests.codes.ok, 'request is not valid and the project could not be created')
-
+    def tearDown(self):
+        requests.delete('https://13.92.28.188:8090/rest/api/2/project/HEX', auth=('restadmin','restadmin'))
 
     @classmethod
     def tearDownClass(cls):
