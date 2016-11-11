@@ -23,7 +23,7 @@ def intersect(lst1, lst2):
 # should return the list of projects
 def request_get():
     headers = {
-        'Content-Type': 'application-json'
+        'Content-Type': 'application/json'
     }
     auth = ('restadmin', 'restadmin')
 
