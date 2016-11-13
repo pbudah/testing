@@ -1,5 +1,7 @@
 import unittest, requests
 
+ADDED = 201
+
 class AddIssueTest(unittest.TestCase):
 
     def setUp(self):
@@ -11,12 +13,10 @@ class AddIssueTest(unittest.TestCase):
 
     def test_create(self):
         r = self.prst.status_code
-        #r = self.prst.json()
-        print r
-        self.assertTrue(self.prst.status_code == requests.codes.ok, 'request is not valid and the issue could not be created')
+        self.assertEqual(r, ADDED, 'request is not valid and the issue could not be created')
 
     #def tearDown(self):
-        #requests.delete('https://13.92.28.188:8090/rest/api/2/issue/MED-35', auth=('restadmin','restadmin'))
+        #requests.delete('http://13.92.28.188:8090/rest/api/2/issue/MED-35', auth=('restadmin','restadmin'))
 
 
 if __name__ == '__main__':
