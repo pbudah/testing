@@ -1,7 +1,7 @@
 import unittest
 from selenium import webdriver
 
-class AuthorithationTest(unittest.TestCase):
+class LoginTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         # create a new Chrome session
@@ -9,8 +9,12 @@ class AuthorithationTest(unittest.TestCase):
         cls.driver.implicitly_wait(30)
         cls.driver.maximize_window()
 
-        # navigate to the application home page
-        cls.driver.get("http://13.92.28.188:8090/secure/Dashboard.jspa")
+    def test_authorithation(self):
+        # navigate to the application login page
+        driver = self.driver
+        driver.get("http://13.92.28.188:8090/secure/Dashboard.jspa")
+
+        # check that login page was opened
 
 
     @classmethod
