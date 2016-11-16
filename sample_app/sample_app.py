@@ -1,3 +1,5 @@
+import requests
+
 # should sort the list using any algorithm
 def sort(lst):
     n = 1
@@ -17,3 +19,14 @@ def intersect(lst1, lst2):
             lst.append(lst1[i])
 
     return lst
+
+# should return the list of projects
+def request_get():
+    headers = {
+        'Content-Type': 'application/json'
+    }
+    auth = ('restadmin', 'restadmin')
+
+    resp = requests.get('http://13.92.28.188:8090/rest/api/2/project', headers=headers, auth=auth)
+
+    return resp
