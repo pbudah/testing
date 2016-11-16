@@ -15,6 +15,7 @@ class LoginTest(unittest.TestCase):
         driver.get("http://13.92.28.188:8090/secure/Dashboard.jspa")
 
         # check that login page was opened
+        self.assertIn("System Dashboard - JIRA", driver.title, 'incorrect page or page was not opened')
 
 
     @classmethod
