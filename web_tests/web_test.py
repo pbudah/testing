@@ -32,7 +32,9 @@ class LoginTest(unittest.TestCase):
         loginButton = driver.find_element_by_xpath(loginButtonXpath)
         loginButton.click()
 
-
+        # check that submission was successful
+        logOut = driver.find_element_by_id("log_out")
+        self.assertIsNotNone(logOut, 'submission failed')
 
 
     @classmethod
